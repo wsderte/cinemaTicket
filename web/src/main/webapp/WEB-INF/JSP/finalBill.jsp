@@ -8,13 +8,15 @@
 </head>
 <body>
 <%
-String   name =  (String) request.getAttribute("name");
-     out.println(name);
-     String num = (String) request.getAttribute("1");
-     out.println(num);
+//String   name =  (String) request.getAttribute("name");
+ //    out.println(name);
+ //    String num = (String) request.getAttribute("1");
+ //    out.println(num);
      
 %>  
-
+<form id="res" action="finalBill">
+<input type="SUBMIT" name="Res" value="Result"/>
+</form>
 
 </body>
 </html>
