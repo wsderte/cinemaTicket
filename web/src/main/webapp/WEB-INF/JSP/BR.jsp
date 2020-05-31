@@ -78,12 +78,21 @@ $('.result').html(result);
    			//
    			
    	}
-	 </script> 
+ 
+ function onSubmit(){
+     if (!tableTextId.value) {
+    	 tableTextId.focus();
+         alert('Please choose your seat');
+         return false;
+     }
+   }
+ 
+ </script> 
 
 	  
-<form id="BR" action="BR">
- <input  name="tableValue" id="tableTextId" > <br />
-<input type="SUBMIT" name="I accept my choose" value="I accept my choose"/>
+<form onsubmit="return onSubmit()" id="BR" action="BR">
+ <input type="hidden" name="tableValue" id="tableTextId" > <br />
+<input id="BR" type="SUBMIT" name="I accept my choose" value="I accept my choose"/>
 </form>
  <%  
  	//session.setAttribute("chair", new int[][] {{1,1},{1,1},{1,1}});

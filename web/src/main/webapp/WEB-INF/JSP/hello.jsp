@@ -78,11 +78,18 @@ $('.result').html(result);
    			//
    			
    	}
+ function onSubmit(){
+     if (!tableTextId.value) {
+    	 tableTextId.focus();
+         alert('Please choose your seat');
+         return false;
+     }
+   }
 	 </script> 
 
 	  
-<form id="hello" action="hello">
- <input  name="tableValue" id="tableTextId" > <br />
+<form onsubmit="return onSubmit()" id="hello" action="hello">
+ <input type="hidden" name="tableValue" id="tableTextId" > <br />
 <input type="SUBMIT" name="I accept my choose" value="I accept my choose"/>
 </form>
  <%  

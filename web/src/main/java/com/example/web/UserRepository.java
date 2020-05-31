@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends CrudRepository<User,Long> {
-//public User findByName(String name);
-//	public boolean existByIdAndChair(Integer Id, Integer chair);
+public User findByName(String name);
+	public boolean existsByIdAndChair(Long Id, Integer chair);
+	public boolean existsByRawAndChair(Integer raw, Integer chair);
 }

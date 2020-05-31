@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 	
 
 //schema               ->hello
-//index->logIn->choice-> BR 2 ->finalBill (nuse)
-	       //          ->3
+//index->logIn->choice-> BR 2 ->finalBill 
+	       //          ->
 	
 	//Action by index
 	 @RequestMapping("/log")
@@ -33,7 +33,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 	   public String signIn(HttpServletRequest user) {
 		 HttpSession session = user.getSession();  
 		   	String   name =  (String) user.getParameter("Name");
+		   	if(name == null || name == "") {
+		   		int r = (int) (Math.random()*10);
+		   		if(r<5) {
+		   		name = "Adam";
+		   		}else {
+		   			name = "Bob";
+		   		}
+		   	}
 		  session.setAttribute("Name", name);
+		  
+		  
+		  
 		  // 	Integer  chair = Integer.parseInt(user.getParameter("chair")) ;
 		//  	String   cinema =  (String) user.getParameter("cinema");
 		  //  User U1 = new User(name);
@@ -159,15 +170,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 	 @RequestMapping("/finalBill")
 	   public String finalBill(HttpServletRequest user) {
 		 HttpSession session = user.getSession(); 
+		 //get string 
 		   String name = (String) session.getAttribute("Name");
 		   String cinema = (String) session.getAttribute("cinema");
+		  // get int
 		   int[] raw = (int[]) session.getAttribute("chair");
 		   int[] chair = (int[]) session.getAttribute("raw");
 		   
+		   //creating person in db
+		 for (int i = 0; i < raw.length; i++) {
+		 if(!person.existsByRawAndChair(raw[i], chair[i])) {
+			 				User U1 = new User(name, cinema, chair[i], raw[i]);
+				    		 person.save(U1);
+				    	 }else {
+				    		 System.out.println("Ne tuda");
+		          }
+		 }	
 		   
 		   
-		   System.out.println(name);
-		 	System.out.println(cinema);
+		 //  System.out.println(name);
+		 //	System.out.println(cinema);
+		 	//go to DB
+		 	
 		//  System.out.println(name);
 		//   for(int i = 0; i < raw.length; i++) {
 		//	   System.out.println("final receive" + raw[i]);

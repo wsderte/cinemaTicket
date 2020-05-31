@@ -9,8 +9,8 @@
 <body>
 
 <%
-int[][]   name =  (int[][]) session.getAttribute("chair");
-     out.println(name[1][1]);
+//int[][]   name =  (int[][]) session.getAttribute("chair");
+ //    out.println(name[1][1]);
      
 %>  
 

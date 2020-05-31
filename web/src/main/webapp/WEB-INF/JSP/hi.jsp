@@ -15,7 +15,7 @@
 	  </form>
 	  
 	  
-	  <jsp:forward page="finalBill.jsp"> 
+	 <jsp:forward page="finalBill.jsp"> 
 	<jsp:param name="name" value= name /> 
 	<jsp:param name="1" value= "${2}" />
 	</jsp:forward>

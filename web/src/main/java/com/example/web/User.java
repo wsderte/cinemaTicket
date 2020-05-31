@@ -33,6 +33,13 @@ public class User {
 		  this.cinema = cinema;
 		  this.chair = chair;
 	  }
+	  // name, cinema, chair, raw
+	  public User(String name,String cinema,Integer chair,Integer raw) {
+		  this.name = name;
+		  this.cinema = cinema;
+		  this.chair = chair;
+		  this.raw = raw;
+	  }
 	  
 	  //id
 	  @Column
