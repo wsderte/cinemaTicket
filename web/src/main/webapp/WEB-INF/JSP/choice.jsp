@@ -15,8 +15,8 @@
 <input type="SUBMIT" name="Simba" value="Simba"/>
 </form>
 
-<form id="choice2" action="choice">
-<input type="SUBMIT" name="SimbabaA" value="SimbabaA"/>
+<form id="choice2" action="choice2">
+<input type="SUBMIT" name="Blade Runner" value="Blade Runner"/>
 </form>
 
 </body>

@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"
-   %>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<title>Blade Runner</title>
+
 <style>
     <%@include file="/WEB-INF/css/style.css"%>
 </style>
- 
-</head>
 
- <body>
- <h1>Simba</h1>
+</head>
+<body>
+ <h1>Blade Runner</h1>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
    <body>
   		 <div class='result'></div>
@@ -81,7 +81,7 @@ $('.result').html(result);
 	 </script> 
 
 	  
-<form id="hello" action="hello">
+<form id="BR" action="BR">
  <input  name="tableValue" id="tableTextId" > <br />
 <input type="SUBMIT" name="I accept my choose" value="I accept my choose"/>
 </form>

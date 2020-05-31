@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 	   UserRepository person;
 	
 
-//schema               - >1
-//index->logIn->choice-> hello 2 ->finalBill (nuse)
-	       //          - >3
+//schema               ->hello
+//index->logIn->choice-> BR 2 ->finalBill (nuse)
+	       //          ->3
 	
 	//Action by index
 	 @RequestMapping("/log")
@@ -54,10 +54,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 	      return "/hello";
        }
 	 
-
+	 @RequestMapping("/choice2")
+	   public String choice2(HttpServletRequest user) {
+		//   HttpSession session = user.getSession();   
+		  // int[][] arr = (int[][]) session.getAttribute("chair");
+		  // String s = (String) session.getAttribute("cinema");
+		   //   System.out.println(s);
+			//  System.out.println(arr[0][0]);
+	      return "/BR";
+     }
+	 
+	 
 	   @RequestMapping("/hello")
 	   public String printHello(HttpServletRequest user){
 		   HttpSession session = user.getSession();   
+		   String cinema = "Simba";
 		  //  int[][] arr = (int[][]) session.getAttribute("chair");
 		  // String s = (String) session.getAttribute("cinema");
 		  // System.out.println(tableValue);
@@ -80,12 +91,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 		     for (int i = 0; i < numArr.length / 2; i++) {
 		    	 raw[i] = numArr[2*i];
 		    	 chairs[i] = numArr[2*i+1];
-		    	 System.out.println("Raw " + raw[i]);
-		    	 System.out.println("Chair " + chairs[i]);
+		    	// System.out.println("Raw " + raw[i]);
+		    	// System.out.println("Chair " + chairs[i]);
 		     }
 		     
+		     //set Data
 			  session.setAttribute("chair", chairs);
 			  session.setAttribute("raw", raw);
+			  session.setAttribute("cinema", cinema);
+			  
 			//String   name =  (String) user.getParameter("Name");
 		 	String name = (String) session.getAttribute("Name");
 		 	System.out.println(name);
@@ -102,14 +116,58 @@ import org.springframework.web.bind.annotation.RequestParam;
 	      return "finalBill";
          }
 	   
-	 //Looking for chair in the cinema
+	   @RequestMapping("/BR")
+	   public String getChoice2(HttpServletRequest user){
+		   HttpSession session = user.getSession();   
+		   String cinema = "BladeRunner";
+		  //  int[][] arr = (int[][]) session.getAttribute("chair");
+		  // String s = (String) session.getAttribute("cinema");
+		  // System.out.println(tableValue);
+		 //  String[] r = (String[]) user.getParameterValues("tableValue");
+		   
+		 //  session.setAttribute("tableValue", tableValue);
+		   String r =  (String) user.getParameter("tableValue");
+
+		     String strArr[] = r.split(",");
+		     int numArr[] = new int[strArr.length];
+		        for (int i = 0; i < strArr.length; i++) {
+		            numArr[i] = Integer.parseInt(strArr[i]);
+		        //    System.out.println(numArr[i]);
+		        }
+		     int raw[] = new int[numArr.length / 2];
+			 int chairs[] = new int[numArr.length / 2];
+				 // отделяем пары ряд-стул
+		     for (int i = 0; i < numArr.length / 2; i++) {
+		    	 raw[i] = numArr[2*i];
+		    	 chairs[i] = numArr[2*i+1];
+		    	 System.out.println("Raw " + raw[i]);
+		    	 System.out.println("Chair " + chairs[i]);
+		     }
+			  session.setAttribute("chair", chairs);
+			  session.setAttribute("raw", raw);
+			  session.setAttribute("cinema", cinema);
+			  
+		 	String name = (String) session.getAttribute("Name");
+		 	System.out.println(name);
+		 	System.out.println(cinema);
+		  
+	      return "finalBill";
+         }
+	   
+	   
+	 //Add to DataBase (end)
 	 @RequestMapping("/finalBill")
 	   public String finalBill(HttpServletRequest user) {
 		 HttpSession session = user.getSession(); 
 		   String name = (String) session.getAttribute("Name");
+		   String cinema = (String) session.getAttribute("cinema");
 		   int[] raw = (int[]) session.getAttribute("chair");
 		   int[] chair = (int[]) session.getAttribute("raw");
 		   
+		   
+		   
+		   System.out.println(name);
+		 	System.out.println(cinema);
 		//  System.out.println(name);
 		//   for(int i = 0; i < raw.length; i++) {
 		//	   System.out.println("final receive" + raw[i]);
@@ -146,7 +204,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 	//	     System.out.println((String) user.getParameter("Name"));
 	//	      return "finalBill";
 	//	   }
-	   
-	   
 	   
 	}
