@@ -79,6 +79,7 @@ $('.result').html(result);
    			
    	}
  function onSubmit(){
+	 
      if (!tableTextId.value) {
     	 tableTextId.focus();
          alert('Please choose your seat');
@@ -95,7 +96,7 @@ $('.result').html(result);
  <%  
  	//session.setAttribute("chair", new int[][] {{1,1},{1,1},{1,1}});
  //	session.setAttribute("cinema", "awer");
- 	
+ 	String name = (String) session.getAttribute("Name");
 // String[] s = (String[]) request.getParameterValues("tableValue");
  //session.setAttribute("Sas", s);
  //	 out.println(s);

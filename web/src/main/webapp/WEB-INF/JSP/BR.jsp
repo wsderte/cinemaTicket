@@ -78,11 +78,20 @@ $('.result').html(result);
    			//
    			
    	}
+ <%  
+ String name = (String) session.getAttribute("Name");
+ %>
+ var s="<%=name%>";
+
+ 
+
  
  function onSubmit(){
+	 
+	
      if (!tableTextId.value) {
     	 tableTextId.focus();
-         alert('Please choose your seat');
+         alert(s + ", plese choose your seat");
          return false;
      }
    }
@@ -95,6 +104,8 @@ $('.result').html(result);
 <input id="BR" type="SUBMIT" name="I accept my choose" value="I accept my choose"/>
 </form>
  <%  
+// String name = (String) session.getAttribute("Name");
+ 
  	//session.setAttribute("chair", new int[][] {{1,1},{1,1},{1,1}});
  //	session.setAttribute("cinema", "awer");
  	

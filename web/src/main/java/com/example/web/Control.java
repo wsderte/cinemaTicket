@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		   	String   name =  (String) user.getParameter("Name");
 		   	if(name == null || name == "") {
 		   		int r = (int) (Math.random()*10);
-		   		if(r<5) {
+		   		if(r<=5) {
 		   		name = "Adam";
 		   		}else {
 		   			name = "Bob";

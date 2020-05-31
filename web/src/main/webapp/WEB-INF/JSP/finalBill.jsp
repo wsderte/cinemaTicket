@@ -10,8 +10,7 @@
 <%
 //String   name =  (String) request.getAttribute("name");
  //    out.println(name);
- //    String num = (String) request.getAttribute("1");
- //    out.println(num);
+ 
      
 %>  
 <form id="res" action="finalBill">
