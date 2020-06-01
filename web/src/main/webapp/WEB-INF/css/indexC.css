@@ -1,0 +1,28 @@
+@charset "UTF-8";
+body{
+	color: #c7b39b;
+	background: #333; /* url(images/bg.jpg);  Цвет фона и путь к файлу  #fc0*/
+}
+
+H2{
+	text-align: center;
+	 margin-top: 150px;
+}
+	 
+#im{
+	color:#333;
+	background-color: #c7b39b;
+/*	margin-left: 95%;*/
+	position: relative;
+    left: 50%;
+    transform: translate(-50%, 0); 
+    font-size: 40px;
+     margin-top: 15px;
+}
+
+
+
+
+
+
+

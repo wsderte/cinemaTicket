@@ -4,14 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<style>
+    <%@include file="/WEB-INF/css/login.css"%>
+</style>
 </head>
 
 <body>
-<form action="logIn">
-name: <input type="text" name="Name" ><br>
+<form id="form" action="logIn">
+ <input id="log" type="text" name="Name" ><br>
 <!--  chair: <input type="number" name="chair" ><br>-->
 <!--  cinema: <input type="text" name="cinema" ><br>-->
-<input type="submit" value="sign up"><br>
+<input id="but" type="submit" value="sign in"><br>
 </form>
 
 </body>

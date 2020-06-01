@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <style>
     <%@include file="/WEB-INF/css/style.css"%>
+    <%@include file="/WEB-INF/css/hello.css"%>
 </style>
  
 </head>
@@ -89,9 +90,9 @@ $('.result').html(result);
 	 </script> 
 
 	  
-<form onsubmit="return onSubmit()" id="hello" action="hello">
+<form id="imp" onsubmit="return onSubmit()" id="hello" action="hello">
  <input type="hidden" name="tableValue" id="tableTextId" > <br />
-<input type="SUBMIT" name="I accept my choose" value="I accept my choose"/>
+<input id="BR" type="SUBMIT" name="I accept my choice" value="I accept my choice"/>
 </form>
  <%  
  	//session.setAttribute("chair", new int[][] {{1,1},{1,1},{1,1}});

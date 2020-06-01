@@ -8,6 +8,7 @@
 
 <style>
     <%@include file="/WEB-INF/css/style.css"%>
+    <%@include file="/WEB-INF/css/hello.css"%>
 </style>
 
 </head>
@@ -85,7 +86,7 @@ $('.result').html(result);
 
  
 
- 
+
  function onSubmit(){
 	 
 	
@@ -99,7 +100,7 @@ $('.result').html(result);
  </script> 
 
 	  
-<form onsubmit="return onSubmit()" id="BR" action="BR">
+<form id="imp" onsubmit="return onSubmit()" id="BR" action="BR">
  <input type="hidden" name="tableValue" id="tableTextId" > <br />
 <input id="BR" type="SUBMIT" name="I accept my choose" value="I accept my choose"/>
 </form>

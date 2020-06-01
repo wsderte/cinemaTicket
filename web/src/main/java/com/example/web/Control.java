@@ -43,8 +43,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		   	}
 		  session.setAttribute("Name", name);
 		  
-		  
-		  
 		  // 	Integer  chair = Integer.parseInt(user.getParameter("chair")) ;
 		//  	String   cinema =  (String) user.getParameter("cinema");
 		  //  User U1 = new User(name);
@@ -174,8 +172,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		   String name = (String) session.getAttribute("Name");
 		   String cinema = (String) session.getAttribute("cinema");
 		  // get int
-		   int[] raw = (int[]) session.getAttribute("chair");
-		   int[] chair = (int[]) session.getAttribute("raw");
+		   int[] chair = (int[]) session.getAttribute("chair");
+		   int[] raw = (int[]) session.getAttribute("raw");
 		   
 		   //creating person in db
 		 for (int i = 0; i < raw.length; i++) {
