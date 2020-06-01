@@ -45,6 +45,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		   	}
 		  session.setAttribute("Name", name);
 		  
+		  ArrayList<User> arr =  (ArrayList<User>) person.findAll();
+			 int[] cha =  new int[arr.size()];
+			 int [] ra =  new int[arr.size()];
+			 String[] na =  new String[arr.size()];
+			 String[] ci =  new String[arr.size()];
+			 String Chair = "";
+			 String Raw = "";
+			 String NameF = "";
+			 String Cinema = "";
+			 //set data
+			 for(int i = 0; i < arr.size(); i++) {
+			 ci[i] = arr.get(i).getCinema();
+			 na[i] = arr.get(i).getName();
+			 ra[i] = arr.get(i).getRaw();
+			 cha[i] = arr.get(i).getChair();
+			 Cinema += ci[i] + ",";
+			 Raw += ra[i] + ",";
+			 NameF += na[i] + ",";
+			 Chair += cha[i] + ",";
+			 }
+			 System.out.println(Cinema);
+			 System.out.println(Raw);
+			 System.out.println(NameF);
+			 System.out.println(Chair);
+			 
+			 session.setAttribute("cha", Chair);
+			 session.setAttribute("ra", Raw);
+			 session.setAttribute("na", NameF);
+			 session.setAttribute("ci", Cinema);
+		  
+		  
 		  // 	Integer  chair = Integer.parseInt(user.getParameter("chair")) ;
 		//  	String   cinema =  (String) user.getParameter("cinema");
 		  //  User U1 = new User(name);
@@ -190,8 +221,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 				    		 System.out.println("Ne tuda");
 		          }
 		 }	
+		 
+		 
 		 ArrayList<User> arr =  (ArrayList<User>) person.findAll();
-		 System.out.println(arr.get(0).getCinema());
+		 int[] cha =  new int[arr.size()];
+		 int [] ra =  new int[arr.size()];
+		 String[] na =  new String[arr.size()];
+		 String[] ci =  new String[arr.size()];
+		 String Chair = "";
+		 String Raw = "";
+		 String NameF = "";
+		 String Cinema = "";
+		 //set data
+		 for(int i = 0; i < arr.size(); i++) {
+		 ci[i] = arr.get(i).getCinema();
+		 na[i] = arr.get(i).getName();
+		 ra[i] = arr.get(i).getRaw();
+		 cha[i] = arr.get(i).getChair();
+		 Cinema += ci[i] + ",";
+		 Raw += ra[i] + ",";
+		 NameF += na[i] + ",";
+		 Chair += cha[i] + ",";
+		 }
+		 System.out.println(Cinema);
+		 System.out.println(Raw);
+		 System.out.println(NameF);
+		 System.out.println(Chair);
+		 
+		 session.setAttribute("cha", Chair);
+		 session.setAttribute("ra", Raw);
+		 session.setAttribute("na", NameF);
+		 session.setAttribute("ci", Cinema);
+		 
 		 //  System.out.println(name);
 		 //	System.out.println(cinema);
 		 	//go to DB

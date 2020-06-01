@@ -20,6 +20,11 @@ body{
 	text-align: center;
      margin-top: 10px;
 }
+#res5{
+	text-align: center;
+     margin-top: 10px;
+}
+
 #but1{
 	font-size: 40px;
 	background-color: #c7b39b;
@@ -29,6 +34,10 @@ body{
 	background-color: #c7b39b;
 }
 #but3{
+	font-size: 40px;
+	background-color: #c7b39b;
+}
+#but4{
 	font-size: 40px;
 	background-color: #c7b39b;
 }

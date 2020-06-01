@@ -11,17 +11,39 @@
 </head>
 <body>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- <div class='result'></div>
- 
  
 <script type="text/javascript">
 <%String name = (String) session.getAttribute("Name");%>  
-
 <%String r = (String) session.getAttribute("R");%>
+
+<%String ci = (String) session.getAttribute("ci");%>
+<%String na = (String) session.getAttribute("na");%>
+<%String cha = (String) session.getAttribute("cha");%>
+<%String ra = (String) session.getAttribute("ra");%>
 
 var s="<%=name%>";
 var r="<%=r%>";
-console.log(r);
+
+var ci="<%=ci%>";
+var na="<%=na%>";
+var cha="<%=cha%>";
+var ra="<%=ra%>";
+
+var users = "";
+
+var subra = ra.split(',');
+var subci = ci.split(',');
+var subna = na.split(',');
+var subcha = cha.split(',');
+console.log(subra);
+for(let i=0;i<subra.length;i++){
+users += " Raw: " + subra[i] + " Chair:" + subcha[i] + " Name: " + subna[i] + " Cinema:" + subci[i];
+
+//console.log(users);
+}
+
+
+//console.log(r);
 var text = "";
 var substr = r.split(',');
 for(let i=0;i<substr.length/2;i++){
@@ -35,10 +57,24 @@ text += " Raw: " + substr[2*i] + " Chair:" + substr[2*i+1];
 
 //console.log(r);
 //document.getElementById("my8345").value= c.toString();
+function allT(){
+	if(s == "Admin"){
+		document.getElementById("area5").value = users;
+	 // console.log(text);
+		//document.getElementById("di").style="display: block";
+		//document.getElementById("area4").value = text;
+		
+		//document.getElementById("f").value= text ;
+			// document.getElementById("res").type="text";
+		}else{
+			alert( "Only as Admin ");
+		}
+}
+
 
 function order()
 {
-if(s == "Admin"){
+//if(s == "Admin"){
   //console.log(text);
 	//document.getElementById("di").style="display: block";
 	document.getElementById("area4").value = text;
@@ -49,9 +85,9 @@ if(s == "Admin"){
 	//alert( "Oww,Hi Mark " + r);
 
 		// document.getElementById("res").type="text";
-	}else{
-		alert( "Oww,Hi Mark " + r);
-	}
+//	}else{
+	//	alert( "Only as Admin ");
+	//}
 }
  </script>
 <%  
@@ -74,6 +110,11 @@ if(s == "Admin"){
 <form id="res4">
 <input type="hidden" name="name1" id="my">
  <textarea id="area4"></textarea>
+</form>
+
+<form id="res5">
+ <input id="but4" type="button" name="button3" value="See all orders" onClick="allT()">
+ <textarea id="area5"></textarea>
 </form>
 
 </body>
