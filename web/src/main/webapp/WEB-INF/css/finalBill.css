@@ -5,9 +5,33 @@ body{
 	background: #333;
 }
 
+#res1{
+	text-align: center;
+     margin-top: 200px;
+}
 
+#res2{
+	text-align: center;
+     margin-top: 10px;
+}
 
+#res3{
+	text-align: center;
+     margin-top: 10px;
+}
 
-
-
-
+#but1{
+	font-size: 40px;
+	background-color: #c7b39b;
+}
+#but2{
+	font-size: 40px;
+	background-color: #c7b39b;
+}
+#but3{
+	font-size: 40px;
+	background-color: #c7b39b;
+}
+	
+	
+	

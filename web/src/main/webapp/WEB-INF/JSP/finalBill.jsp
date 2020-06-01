@@ -5,18 +5,28 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
- 
+<style>
+ <%@include file="/WEB-INF/css/finalBill.css"%>
+ </style>
 </head>
 <body>
 
 <script type="text/javascript">
 <%String name = (String) session.getAttribute("Name");%>  
-<%int[] Chair = (int[]) session.getAttribute("chair");%>  
-<%int[] raw = (int[]) session.getAttribute("raw");%>  
+
+<%String r = (String) session.getAttribute("R");%>
 
 var s="<%=name%>";
-var c ="<%=Chair%>";
-var r="<%=raw%>";
+var r="<%=r%>";
+
+var substr = r.split(',');
+for(let i=0;i<substr.length;i++){
+let raw = substr[2*i];
+let chair = substr[2*i+1];
+//console.log(substr[i]);
+}
+
+//console.log(r);
 //document.getElementById("my8345").value= c.toString();
 
 function order()
@@ -27,20 +37,23 @@ if(s == "Admin"){
 	document.getElementById("my8345").value= c.toString();
 		// document.getElementById("res").type="text";
 	}else{
-		alert( "Oww,Hi Mark ");
+		alert( "Oww,Hi Mark " + r);
 	}
 }
  </script>
  
-<form id="res"  action="finalBill">
-	<input type="SUBMIT" name="Res" value="Click to access your order"/>
+<form id="res1"  action="finalBill">
+	<input id="but1" type="SUBMIT" name="Res" value="Click to access your order"/>
 </form>
-<form id="res" action="logIn">
-	<input type="SUBMIT" name="Res" value="Click to go back"/>
+<form id="res2" action="logIn">
+	<input id="but2" type="SUBMIT" name="Res" value="Click to go back"/>
 </form>
 
 <input type="hidden" name="name1" id="my8345" >
-   <input type="button" name="button2" value="See all orders" onClick="order()">
+
+<form id="res3" action="logIn">
+   <input id="but3" type="button" name="button2" value="See all orders" onClick="order()">
+</form>
 
 </body>
 </html>

@@ -85,12 +85,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		   
 		 //  session.setAttribute("tableValue", tableValue);
 		   String r =  (String) user.getParameter("tableValue");
-
+		 //  System.out.println(r + " awdawdaw");
+		   session.setAttribute("R", r);
+		   
 		     String strArr[] = r.split(",");
 		     int numArr[] = new int[strArr.length];
 		        for (int i = 0; i < strArr.length; i++) {
-		            numArr[i] = Integer.parseInt(strArr[i]);
-		        //    System.out.println(numArr[i]);
+		           // numArr[i] = Integer.parseInt(strArr[i]);
+		        	numArr[i] = Integer.valueOf(strArr[i]);
+		        	
+		           System.out.println(numArr[i]);
 		        }
 
 		     int raw[] = new int[numArr.length / 2];
