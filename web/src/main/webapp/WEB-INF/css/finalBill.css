@@ -4,22 +4,22 @@ body{
 	color: #c7b39b;
 	background: #333;
 }
-
 #res1{
 	text-align: center;
      margin-top: 200px;
 }
-
 #res2{
 	text-align: center;
      margin-top: 10px;
 }
-
 #res3{
 	text-align: center;
      margin-top: 10px;
 }
-
+#res4{
+	text-align: center;
+     margin-top: 10px;
+}
 #but1{
 	font-size: 40px;
 	background-color: #c7b39b;
@@ -33,5 +33,39 @@ body{
 	background-color: #c7b39b;
 }
 	
+#my{
+	text-align: center;
+     margin-top: 10px;
+     font-size: 40px;
+	 background-color: #c7b39b;
+}
+
+.result {
+  font-size: 13px;
+  display: inline-block;
+  width: 90px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-right: 5px;
+}
+
+
+#di{
+	text-align: center;
+	
+}
+
+#area4{
+	background-color: #333;
+	color: #c7b39b;
+	width: 8%;
+    height: 200px; 
+    border: none;
+    resize: none;
+    cursor: default;
+}
+
+
+
 	
 	

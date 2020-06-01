@@ -1,5 +1,7 @@
 package com.example.web;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -188,8 +190,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 				    		 System.out.println("Ne tuda");
 		          }
 		 }	
-		   
-		   
+		 ArrayList<User> arr =  (ArrayList<User>) person.findAll();
+		 System.out.println(arr.get(0).getCinema());
 		 //  System.out.println(name);
 		 //	System.out.println(cinema);
 		 	//go to DB
