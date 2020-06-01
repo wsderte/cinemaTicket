@@ -36,8 +36,8 @@ var subci = ci.split(',');
 var subna = na.split(',');
 var subcha = cha.split(',');
 console.log(subra);
-for(let i=0;i<subra.length;i++){
-users += " Raw: " + subra[i] + " Chair:" + subcha[i] + " Name: " + subna[i] + " Cinema:" + subci[i];
+for(let i=0;i<subra.length-1;i++){
+users +=" User number:" + i+1 + " Raw: " + subra[i] + " Chair:" + subcha[i] + " Name: " + subna[i] + " Cinema:" + subci[i] + "\n";
 
 //console.log(users);
 }
