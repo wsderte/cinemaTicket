@@ -21,6 +21,9 @@
 .bay {
   background-color: red;
 }
+.close{
+	 background-color: #333;
+}
 .result {
   font-size: 13px;
   display: inline-block;

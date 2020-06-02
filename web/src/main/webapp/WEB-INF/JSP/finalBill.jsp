@@ -96,7 +96,7 @@ function order()
 
 
 <form id="res1"  action="finalBill">
-	<input id="but1" type="SUBMIT" name="Res" value="Click to access your order"/>
+	<input id="but1" type="SUBMIT" name="Res" value="Click to confirm your order"/>
 </form>
 
 <form id="res2" action="logIn">

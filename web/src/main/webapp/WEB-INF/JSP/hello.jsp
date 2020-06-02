@@ -22,6 +22,36 @@
       <script type="text/javascript">
     
 // type="hidden"
+
+<%String cha = (String) session.getAttribute("cha");%>
+	<%String ci = (String) session.getAttribute("ci");%>
+	<%String ra = (String) session.getAttribute("ra");%>
+	
+	var cha="<%=cha%>";
+	var ra="<%=ra%>";
+	var ci="<%=ci%>";
+	
+	var users =[];
+	var u = {
+			pair: [] ,
+		    row: [] ,
+		    chair: []
+	};
+	var subra = ra.split(',');
+	var subci = ci.split(',');
+	var subcha = cha.split(',');
+	//console.log(subci[0]);
+	for(let i=0;i<subra.length-1;i++){
+		if(subci[i] === "Simba"){
+	 		u.row.push(subra[i]);
+	 		u.chair.push(subcha[i]);
+	 	    u.pair.push([subra[i],subcha[i]]);
+	 		
+		}
+		//console.dir(u.row);
+	}
+
+
    	var cinemaHall1 = {
    		    row: [10, 20, 30, 30, 30, 30, 30, 30, 30, 30, 30] },
    		  cinemaHallMap = '';
@@ -41,6 +71,18 @@
 
    		//заполняем в html зал номер 1
  $('.zal1').html(cinemaHallMap);
+   		
+ $.each($('.seat'), function(key, item) {
+	 // console.log(item);
+	// console.log(u.row.indexOf("8"));
+    if(u.row.indexOf($(item).data().row.toString()) != -1 && u.chair.indexOf($(item).data().seat.toString()) != -1){  
+  // if($(item).data().seat == 1){
+    	$(item).toggleClass('close');
+}
+});
+   		
+   		
+   		
    		// тут по клику определяем что место выкуплено
  $('.seat').on('click', function(e) {
    		  // если первый раз кликнули билет выкупили, 
