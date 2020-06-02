@@ -87,7 +87,13 @@
  $('.seat').on('click', function(e) {
    		  // если первый раз кликнули билет выкупили, 
    		  // если повторно значит вернули билет
- $(e.currentTarget).toggleClass('bay');
+	 if(u.row.indexOf($(e.currentTarget).data().row.toString()) != -1 && u.chair.indexOf($(e.currentTarget).data().seat.toString()) != -1){  
+  		  // if($(item).data().seat == 1){
+  		    	alert("It's already used");
+  	    }else{
+  	     $(e.currentTarget).toggleClass('bay');
+  	    }
+ //$(e.currentTarget).toggleClass('bay');
    		  //показываем сколько билетов выкуплено
     showBaySeat();
 
